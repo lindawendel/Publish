@@ -1,0 +1,145 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: hsl(40, 100%, 85%);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: normal;
+    line-height: 1.5em;
+}
+
+aside {
+    background-color: hsl(40, 50%, 60%)
+}
+
+.winner {
+    color:hsl(40, 100%, 35%);
+}
+
+.nominee {
+    color: hsl(0, 0%, 50%);
+}
+
+div {
+    /* border: 2px solid red; */
+    padding: 8px;
+}
+
+header, main, #left, #right
+{
+    /* border: 2px solid green; */
+    padding: 5px;
+}
+
+#brad_pic {
+    width: 100%; 
+    padding-left: 15px;
+}
+
+body {
+    display: grid;
+    grid-template:
+    "as_left header as_right"
+    "as_left main as_right"
+    "as_left footer as_right";
+    grid-template-columns: 5% 90% 5%;
+}
+
+header {grid-area: header;}
+main {grid-area: main;}
+footer {grid-area: footer;}
+#left {grid-area: as_left}
+#right {grid-area: as_right;}
+
+#brad_pic , #main_text {
+    border-top: 1px solid hsl(40, 50%, 60%);
+    border-bottom: 1px solid hsl(40, 50%, 60%);
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#movies , #awards {
+    border-bottom: 1px solid hsl(40, 50%, 60%);
+    padding-bottom: 15px;
+}
+
+main {
+    display:grid;
+    grid-template:  
+    "a b b b"
+    "c c d d";
+    grid-template-columns: 2fr 3fr 3fr 2fr;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+#brad_pic {grid-area: a; }
+#main_text {grid-area: b;}
+#movies {grid-area: c; }
+#awards {grid-area: d; }
+
+h1 {
+    font-style: italic;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    font-style: normal;
+    padding: 5px;
+}
+
+footer ul {
+    list-style-type: none;
+    font-style: normal;
+    text-align: center;
+}
+
+@media (max-width: 1100px) {
+    body {
+        display: grid;
+        grid-template: 
+        "header"
+        "main"
+        "footer";
+    }
+}
+
+@media (max-width: 800px) {  
+    body {
+        display: grid;
+        grid-template: 
+        "header"
+        "main"
+        "footer"; 
+    }
+    
+    #brad_pic {
+        display: block;
+        text-align: center;
+        border-bottom: 0;
+        padding-bottom: 0;
+    }
+    #main_text {
+        border-top: 0;
+    }
+    #movies {
+        border-bottom: 0;
+    }
+
+    main {
+        display: grid;
+        grid-template:
+        "a"
+        "b"
+        "c"
+        "d";
+    }
+}
+
